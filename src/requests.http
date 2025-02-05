@@ -1,0 +1,30 @@
+###
+POST http://localhost/api/voitures
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "Peugeot 211",
+        "immatriculation_date": 1998
+    }
+}
+
+###
+GET http://localhost/api/voitures
+
+###
+GET http://localhost/api/voitures/22
+
+###
+PUT http://localhost/api/voitures/2
+Content-Type: application/json
+
+{
+    "data": {
+        "name": "Peugeot 212",
+        "immatriculation_date": 1995
+    }
+}
+
+###
+DELETE http://localhost/api/voitures/2

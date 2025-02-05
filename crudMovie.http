@@ -1,0 +1,132 @@
+### Récupérer tous les movies
+GET http://localhost:80/api/movies
+Authorization: BASIC toto2:toto21234
+
+### Récupérer un film
+GET http://localhost:80/api/movies/1
+
+
+###
+GET http://localhost:80/api/movies?pagination[limit]=1
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "XO, Kitty",
+        "description": "Guidée par ses sentiments jusqu'à un lycée prestigieux à Séoul, Kitty l'entremetteuse découvre que la vie, l'amour et la famille sont plus compliqués que ce qu'elle imaginait",
+        "releaseDate": 2023,
+        "director": "Jenny Han"
+    }
+}
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Vice-versa 2",
+        "description": "Riley, adolescente depuis peu, au moment où le Quartier Cérébral doit être démoli pour faire place à un événement totalement inattendu : de nouvelles Émotions ! Joie, Tristesse, Colère, Peur et Dégoût, qui ont longtemps su contrôler les choses avec succès, ne savent pas comment réagir à l'arrivée d'Anxiété. Et il semblerait qu'elle ne soit pas seule. Elle est venue accompagnée d'Embarras, Envie et Ennui",
+        "releaseDate": 2024,
+        "director": "Kelsey Mann"
+    }
+}
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Grey's Anatomy",
+        "description": "Meredith Grey, fille d'un chirurgien très réputé, commence son internat de première année en médecine chirurgicale dans un hôpital de Seattle. La jeune femme s'efforce de maintenir de bonnes relations avec ses camarades internes, mais dans ce métier difficile la compétition fait rage",
+        "releaseDate": 2005,
+        "director": "Shonda Rhimes"
+    }
+}
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Sonic 3, le film",
+        "description": "Sonic, Knuckles et Tails sont à nouveau réunis face à un puissant nouvel adversaire, Shadow, un mystérieux vilain doté de pouvoirs comme ils n'en ont encore jamais vu. Leurs habiletés étant toutes surclassées, l'Équipe Sonic doit tenter une alliance improbable dans l'espoir d'arrêter Shadow et de protéger la planète",
+        "releaseDate": 2024,
+        "director": "Jeff Fowler"
+    }
+}
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Nosferatu",
+        "description": "Dans l'Allemagne de 1838, Thomas Hutter, agent immobilier, est envoyé en Transylvanie pour rencontrer le mystérieux comte Orlok, intéressé par l'achat d'une propriété à Wisborg. Laissant derrière lui sa jeune épouse, Ellen, sujette à des visions inquiétantes, Thomas découvre rapidement la véritable nature du comte : un vampire terrifiant. Pendant ce temps, à Wisborg, Ellen est de plus en plus tourmentée par des cauchemars prémonitoires liés à Orlok. Lorsque le comte s'installe dans sa nouvelle demeure, une série d'événements horrifiques se déclenche, plongeant la ville dans la terreur et la désolation.",
+        "releaseDate": 2024,
+        "director": "Robert Eggers"
+    }
+}
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Squid Game",
+        "description": "Tentés par un prix alléchant en cas de victoire malheureusement, des centaines de joueurs désargentés acceptent de s'affronter lors de jeux pour enfants aux enjeux mortels.",
+        "releaseDate": 2021,
+        "director": "Hwang Dong-hyeok"
+    }
+}
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Back in Action",
+        "description": "Quinze ans après s'être éclipsés de la CIA pour fonder une famille, Matt et Emily, espions d'élite, replongent dans le monde de l'espionnage lorsque leur couverture est compromise.",
+        "releaseDate": 2025,
+        "director": "Seth Gordon"
+    }
+}
+
+### Créer un movie
+POST http://localhost:80/api/movies
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Mufasa : Le Roi lion",
+        "description": "Rafiki raconte à la jeune lionne Kiara - fille de Simba et Nala - la légende de Mufasa. Il est épaulé par Timon et Pumbaa, célèbres pour leurs répliques percutantes. Présentée sous forme de flashbacks, l'histoire de Mufasa retrace le parcours d’un lionceau orphelin, seul et désemparé, qui croise un jour la route du sympathique Taka, héritier d’une lignée royale. Cette rencontre inattendue devient le point de départ d’un voyage jalonné de péripéties pour un petit groupe « d’indésirables » formé autour d’eux, désormais en quête de son destin. Leur amitié sera mise à rude épreuve lorsqu’ils devront s’unir pour affronter un adversaire aussi menaçant que redoutable…",
+        "releaseDate": 2024,
+        "director": "Barry Jenkins"
+    }
+}
+
+
+### Modifier un movie
+PUT http://localhost:80/api/movies/8
+Content-Type: application/json
+
+{
+    "data": {
+        "title": "Mufasa : Le Roi lion",
+        "description": "Rafiki raconte à la jeune lionne Kiara - fille de Simba et Nala - la légende de Mufasa. Il est épaulé par Timon et Pumbaa, célèbres pour leurs répliques percutantes. Présentée sous forme de flashbacks, l'histoire de Mufasa retrace le parcours d’un lionceau orphelin, seul et désemparé, qui croise un jour la route du sympathique Taka, héritier d’une lignée royale. Cette rencontre inattendue devient le point de départ d’un voyage jalonné de péripéties pour un petit groupe « d’indésirables » formé autour d’eux, désormais en quête de son destin. Leur amitié sera mise à rude épreuve lorsqu’ils devront s’unir pour affronter un adversaire aussi menaçant que redoutable...",
+        "releaseDate": "2024-12-18",
+        "director": "Barry Jenkins"
+    }
+}
+
+
+### Supprimer un movie
+DELETE http://localhost:80/api/movies/8

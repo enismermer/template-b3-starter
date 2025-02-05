@@ -1,0 +1,10 @@
+### Récupère tous les classes
+GET http://localhost:40/api/classes
+
+### Ajoute une classe
+POST http://localhost:40/api/classes
+Content-Type: application/json
+
+{
+    "nom": "Bachelor Développeur Web"
+}

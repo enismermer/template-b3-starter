@@ -12,3 +12,43 @@ datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
+
+
+model User {
+  id        Int      @id @default(autoincrement())
+  login     String  @unique
+  password  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Eleve {
+  id        Int       @id @default(autoincrement())
+  prenom    String
+  age       Int
+  classeId  Int
+  classe    Classe    @relation(fields: [classeId], references: [id])  // Relation One-to-Many avec Classe
+  groupes   EleveGroupe[]  // Relation Many-to-Many avec Groupe
+}
+
+model Classe {
+  id        Int       @id @default(autoincrement())
+  nom       String
+  eleves    Eleve[]  // Une classe peut avoir plusieurs élèves
+}
+
+model Groupe {
+  id        Int       @id @default(autoincrement())
+  nom       String
+  eleves    EleveGroupe[]  // Relation Many-to-Many avec Eleve
+}
+
+// Table de liaison Many-to-Many entre Eleve et Groupe
+model EleveGroupe {
+  eleveId   Int
+  groupeId  Int
+  eleve     Eleve     @relation(fields: [eleveId], references: [id])
+  groupe    Groupe    @relation(fields: [groupeId], references: [id])
+
+  @@id([eleveId, groupeId])
+}

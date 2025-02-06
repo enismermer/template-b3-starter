@@ -1,0 +1,35 @@
+### Récupère tous les instruments
+GET http://localhost:1992/api/instruments
+
+### Récupère un instrument par ID
+GET http://localhost:1992/api/instruments/1 
+
+
+### Ajoute un instrument
+### Avec une authentification token
+POST http://localhost:1992/api/instruments
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicHNldWRvIjoibGVhLnNjaG1pZHRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkYmY1RHpMQVJycXJsbXpsVlczUWVEdTJzUDg2VVY3VnZEZi40L21DTFF6WnFDR3dmMXFzenkiLCJjcmVhdGVkQXQiOiIyMDI1LTAyLTA2VDEzOjEzOjE3LjQ1N1oiLCJ1cGRhdGVkQXQiOiIyMDI1LTAyLTA2VDEzOjEzOjE3LjQ1N1oiLCJpYXQiOjE3Mzg4NTIxMzF9.UAfyBTvo7zBr4Ra1THibLQLqBeuIUmd50_M4Rf6j1ws
+
+{
+    "nom": "Accordéon",
+    "poids": 50,
+    "couleur": "Beige",
+    "prix": 50
+}
+
+
+
+### Modifie un instrument
+PUT http://localhost:1992/api/instruments/1
+Content-Type: application/json
+
+{
+    "nom": "Guitare",
+    "poids": 40,
+    "couleur": "Marron",
+    "prix": 80
+}
+
+### Supprime un instrument
+DELETE http://localhost:1992/api/instruments/6

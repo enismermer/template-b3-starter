@@ -9,18 +9,18 @@ const prisma = new PrismaClient();
 export const routerAuth = Router();
 
 routerAuth.post("/local/register", async (req, res) => {
-    // const login = req.body.login;
+    // const pseudo = req.body.pseudo;
     // const password = req.body.password;
     console.log("Request body:", req.body); // Debugging
 
-    const { login, password } = req.body.data;
+    const { pseudo, password } = req.body.data;
 
     // Vérifier si les données sont valides
-    if (!login || !password) {
-        return res.status(400).json({ message: "Login and password are required" });
+    if (!pseudo || !password) {
+        return res.status(400).json({ message: "Pseudo and password are required" });
     }
 
-    const userWithEmail = await prisma.user.findUnique({ where: { login } });
+    const userWithEmail = await prisma.user.findUnique({ where: { pseudo } });
 
     if (userWithEmail) {
         res.status(400).json("Email already exists");
@@ -29,7 +29,7 @@ routerAuth.post("/local/register", async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, parseInt(process.env.SALT_ROUNDS!));
         const newUser = await prisma.user.create({ 
             data: {
-                login, 
+                pseudo, 
                 password: hashedPassword 
             }
         });
@@ -41,7 +41,7 @@ routerAuth.post("/local/register", async (req, res) => {
 routerAuth.post("/local", async (req, res) => {
     const { identifier, password } = req.body.data;
 
-    const userWithEmail = await prisma.user.findFirst({ where: { login: identifier } });
+    const userWithEmail = await prisma.user.findFirst({ where: { pseudo: identifier } });
     
     if (!userWithEmail) {
         res.status(400).json("Email or Password is incorrect");

@@ -1,0 +1,15 @@
+### Ajoute une réparation
+### Avec une authentification token
+POST http://localhost:1992/api/reparations
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicHNldWRvIjoibGVhLnNjaG1pZHRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkYmY1RHpMQVJycXJsbXpsVlczUWVEdTJzUDg2VVY3VnZEZi40L21DTFF6WnFDR3dmMXFzenkiLCJjcmVhdGVkQXQiOiIyMDI1LTAyLTA2VDEzOjEzOjE3LjQ1N1oiLCJ1cGRhdGVkQXQiOiIyMDI1LTAyLTA2VDEzOjEzOjE3LjQ1N1oiLCJpYXQiOjE3Mzg4NTIxMzF9.UAfyBTvo7zBr4Ra1THibLQLqBeuIUmd50_M4Rf6j1ws
+
+{
+    "nom": "Element 3",
+    "prix": 200,
+    "instrumentId": 3
+}
+
+### Supprime une réparation
+DELETE http://localhost:1992/api/reparations/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicHNldWRvIjoibGVhLnNjaG1pZHRAZ21haWwuY29tIiwicGFzc3dvcmQiOiIkMmIkMTAkYmY1RHpMQVJycXJsbXpsVlczUWVEdTJzUDg2VVY3VnZEZi40L21DTFF6WnFDR3dmMXFzenkiLCJjcmVhdGVkQXQiOiIyMDI1LTAyLTA2VDEzOjEzOjE3LjQ1N1oiLCJ1cGRhdGVkQXQiOiIyMDI1LTAyLTA2VDEzOjEzOjE3LjQ1N1oiLCJpYXQiOjE3Mzg4NTIxMzF9.UAfyBTvo7zBr4Ra1THibLQLqBeuIUmd50_M4Rf6j1ws

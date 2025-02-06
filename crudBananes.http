@@ -1,0 +1,5 @@
+### Requête avec une paramètre couleur = jaune
+GET http://localhost:1992/api/bananes?[couleur]=jaune
+
+### Requête avec une paramètre couleur sans valeur
+GET http://localhost:1992/api/bananes?[couleur]

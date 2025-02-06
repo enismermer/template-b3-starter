@@ -1,17 +1,23 @@
-### Récupérer tous les users
-GET http://localhost:80/api/auth/local
+### Créer un user
+POST http://localhost:40/api/auth/local/register
+Content-Type: application/json
 
-### Récupérer un user
-GET http://localhost:80/api/auth/local/1
+{
+    "data": {
+        "login": "lea.schmidt@gmail.com",
+        "password": "lea1234"
+    }
+}
 
 
 
 ### Créer un user
-POST http://localhost:80/api/auth/register
+POST http://localhost:40/api/auth/local
 Content-Type: application/json
 
 {
-    "username": "toto",
-    "email": "toto@gmail.com",
-    "password": "toto1234"
+    "data": {
+        "login": "lea.schmidt@gmail.com",
+        "password": "lea1234"
+    }
 }

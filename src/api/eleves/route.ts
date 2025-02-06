@@ -11,6 +11,7 @@ routerEleve.post("/", async (req, res) => {
         const eleve = await prisma.eleve.create({
             data: { prenom, age, classeId }
         });
+        
         res.status(201).json(eleve);
     } catch (error) {
         res.status(500).json({ error: "Erreur lors de la création de l'élève" });
@@ -23,6 +24,7 @@ routerEleve.get("/", async (req, res) => {
         const eleves = await prisma.eleve.findMany({
             include: { classe: true, groupes: true } // Inclut les relations
         });
+        
         res.status(200).json(eleves);
     } catch (error) {
         res.status(500).json({ error: "Erreur lors de la récupération des élèves" });

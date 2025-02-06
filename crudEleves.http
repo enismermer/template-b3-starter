@@ -10,13 +10,22 @@ POST http://localhost:40/api/eleves
 Content-Type: application/json
 
 {
+    "prenom": "Stijn",
+    "age": 31,
+    "classeId": 1
+}
+
+
+
+### Modifie un élève
+PUT http://localhost:40/api/eleves/1
+Content-Type: application/json
+
+{
     "prenom": "Enis",
     "age": 24,
     "classeId": 1
 }
 
-### Modifie un élève
-PUT http://localhost:40/api/eleves/1
-
 ### Supprime un élève
-DELETE http://localhost:40/api/eleves/1
+DELETE http://localhost:40/api/eleves/7
